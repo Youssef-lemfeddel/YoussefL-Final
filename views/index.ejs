@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Juice Shop</title>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Welcome to the Juice Shop</h1>
+      <p>Name: Youssef Lemfeddel</p>
+      <p>Number: 8867203</p>
+    </div>
+  </header>
+  
+  <div class="container">
+    <form action="order.ejs" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" name="name" required>
+      <br>
+      <label for="phoneNumber">Phone Number:</label>
+      <input type="text" name="phoneNumber" pattern="[0-9]{10}" required>
+      <br>
+      <label for="juices">Select Juices:</label>
+      <select name="juices" multiple required>
+        <option value="Lichi">Lichi Juice ($3.99)</option>
+        <option value="Beet">Beet Juice ($2.99)</option>
+        <option value="Peach">Peach Juice ($3.49)</option>
+      </select>
+      <br>
+      <button type="submit">Place Order</button>
+    </form>
+
+    <a href="orders.ejs" class="view-orders-button">View Orders</a>
+  </div>
+  
+  <footer>
+    <div class="container">
+      &copy; 2023 Juice Shop by Youssef Lemfeddel
+    </div>
+  </footer>
+</body>
+</html>

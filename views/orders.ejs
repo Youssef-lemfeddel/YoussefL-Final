@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>View Orders</title>
+</head>
+<body>
+    <header>
+      <div class="container">
+        <h1>Welcome to the Juice Shop</h1>
+        <p>Name: Youssef Lemfeddel</p>
+        <p>Number: 8867203 </p>
+      </div>
+    </header>
+  <h1>View Orders</h1>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Phone Number</th>
+      <th>Juices</th>
+      <th>Sub Total</th>
+      <th>Tax (14.975%)</th>
+      <th>Total Cost</th>
+    </tr>
+    <% for (const order of orders) { %>
+      <tr>
+        <td><%= order.name %></td>
+        <td><%= order.phoneNumber %></td>
+        <td>
+          <ul>
+            <% for (const juice of order.juices) { %>
+              <li><%= juice %></li>
+            <% } %>
+          </ul>
+        </td>
+        <td>$<%= calculateSubTotal(order.juices) %></td>
+        <td>$<%= calculateTax(order.juices) %></td>
+        <td>$<%= calculateTotal(order.juices) %></td>
+      </tr>
+    <% } %>
+  </table>
+  <footer>
+    <div class="container">
+      &copy; 2023 Juice Shop by Omar Abdulle
+    </div>
+  </footer>
+</body>
+</html>
